@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrolis — Системы управления бизнес-процессами</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+
+        .background-slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            filter: brightness(0.4);
+        }
+
+        .background-slider img.active {
+            opacity: 1;
+        }
+
+        .welcome {
+            background-color: rgba(0, 0, 0, 0.65);
+            border-radius: 10px;
+            margin: 80px auto;
+            padding: 40px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+
+        .modal-content {
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        .modal.fade .modal-dialog {
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        .modal.show .modal-dialog {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<div class="background-slider">
+    <img src="https://img.freepik.com/premium-photo/blurred-empty-open-space-office-design-background-with-abstract-light-bokeh-office-interior_685067-6511.jpg?w=2000" class="active" alt="bg1">
+    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="bg2">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="bg3">
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Astrolis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#articlesModal">Статьи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactsModal">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Welcome Section -->
+<div class="welcome">
+    <h1>Добро пожаловать в Astrolis</h1>
+    <p>Готовые решения для управления бизнес-процессами — удобно, масштабируемо, без лишней сложности.</p>
+</div>
+
+<!-- About Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="aboutModalLabel">О нас</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Astrolis предлагает собственные готовые решения для управления бизнес-процессами, доступные в формате SaaS и для локальной установки. Наши продукты ориентированы на автоматизацию, масштабируемость и простоту внедрения без необходимости индивидуальной доработки под каждый проект.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Articles Modal -->
+<div class="modal fade" id="articlesModal" tabindex="-1" aria-labelledby="articlesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="articlesModalLabel">Полезные статьи</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Что такое бизнес-процессы и как их описать</h5>
+                <p>Бизнес-процесс — это последовательность действий, направленных на достижение определенного результата...</p>
+                <h5>Моделирование бизнес-процессов: ключевые аспекты</h5>
+                <p>Моделирование бизнес-процессов помогает визуально представить и оптимизировать рабочие процессы компании...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contacts Modal -->
+<div class="modal fade" id="contactsModal" tabindex="-1" aria-labelledby="contactsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactsModalLabel">Контакты</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Email: info@astrolis.ru<br>Телефон: +7 (999) 123-45-67</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+        <p>© 2025 Astrolis. Все права защищены.</p>
+        <small>Сайт находится в стадии разработки.</small>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const images = document.querySelectorAll('.background-slider img');
+    let current = 0;
+
+    setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }, 6000);
+</script>
+
+</body>
+</html>
