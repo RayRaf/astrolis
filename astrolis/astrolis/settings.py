@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-mtb6hmtw1&cor3m9ne0^0fqtc6v7iprq%e301=a27$8q%3n1u#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["astrolis.ru", "www.astrolis.ru", "10.10.0.2", "localhost"]
+
 
 
 # Application definition
